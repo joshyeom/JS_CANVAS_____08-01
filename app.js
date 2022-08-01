@@ -3,9 +3,12 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
 
-ctx.moveTo(50, 50); //Default값은 0,0 canvas의 맨왼쪽위에서 시작
-ctx.lineTo(150, 50); //붓으로 쭉 그린다고 생각하면 됨. x축으로 150이동
-ctx.lineTo(150, 150);
-ctx.lineTo(50, 150);
-ctx.lineTo(50, 50);
-ctx.fill(); //선으로 그린
+ctx.fillRect(200, 200, 50, 200);
+ctx.fillRect(400, 200, 50, 200);
+ctx.lineWidth = 5; //width를 먼저 설정해주어 함.
+ctx.strokeRect(300, 300, 50, 100);
+ctx.fillRect(200, 200, 200, 20);
+ctx.moveTo(200, 200); //붓은 이제 200, 200에 위치함.
+ctx.lineTo(325, 100); //lineTo는 항상 fill,stroke과 같이 속성을 정해주어야 보여짐.
+ctx.lineTo(450, 200); //삼각형 완성
+ctx.fill();
