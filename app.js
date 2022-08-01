@@ -3,12 +3,15 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
 
-ctx.fillRect(200, 200, 50, 200);
-ctx.fillRect(400, 200, 50, 200);
-ctx.lineWidth = 5; //width를 먼저 설정해주어 함.
-ctx.strokeRect(300, 300, 50, 100);
-ctx.fillRect(200, 200, 200, 20);
-ctx.moveTo(200, 200); //붓은 이제 200, 200에 위치함.
-ctx.lineTo(325, 100); //lineTo는 항상 fill,stroke과 같이 속성을 정해주어야 보여짐.
-ctx.lineTo(450, 200); //삼각형 완성
+ctx.fillRect(210 - 40, 200 - 20, 15, 100);
+ctx.fillRect(350 - 40, 200 - 20, 15, 100);
+ctx.fillRect(260 - 40, 200 - 20, 60, 200);
+
+ctx.arc(250, 100, 50, 0, 2 * Math.PI); //2 * Math.PI = circle
+ctx.fill();
+
+ctx.beginPath(); //없이 진행하면 위에 색상과 겹쳐져서 이상해짐.
+ctx.fillStyle = "white";
+ctx.arc(260 + 10, 80, 8, Math.PI, 0);
+ctx.arc(220 + 10, 80, 8, Math.PI, 0);
 ctx.fill();
